@@ -17,6 +17,15 @@ module.exports = {
       // Return the user
       return user;
     },
+    Pet: async (_, __, {models}) => {
+      const pet = await models.Pet.findOne();
+
+      if (!pet) {
+        throw new Error('Pet not found');
+      }
+
+      return pet
+    }
   },
   // Mutation: {
     
