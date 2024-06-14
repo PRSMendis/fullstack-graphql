@@ -18,10 +18,10 @@ module.exports = {
       // Return the user
       return user;
     },
-    Pets: async (_, {input}, {models}) => {
+    Pets: async (_, {input: {name, type}}, {models}) => {
       const query = {};
-      if (input.name) query.name = input.name;
-      if (input.type) query.type = input.type;
+      if (name) query.name = name;
+      if (type) query.type = type;
     
       const pets = await models.Pet.findMany(query);
       return pets;
