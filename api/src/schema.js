@@ -10,14 +10,14 @@ const typeDefs = gql`
     }
     
     type Pet {
-        id: String!
+        id: ID!
         createdAt: String!
         name: String!
-        type: String
+        type: String!
     }
     type Query {
         User: User
-        Pet: Pet
+        Pets: [Pet]!
     }
 
     # type Mutation {

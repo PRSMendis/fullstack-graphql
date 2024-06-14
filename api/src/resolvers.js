@@ -17,8 +17,9 @@ module.exports = {
       // Return the user
       return user;
     },
-    Pet: async (_, __, {models}) => {
-      const pet = await models.Pet.findOne();
+    Pets: async (_, __, {models}) => {
+      // const pet = await models.Pet.findOne();
+      const pet = await models.Pet.findMany();
 
       if (!pet) {
         throw new Error('Pet not found');
