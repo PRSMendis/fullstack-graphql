@@ -3,5 +3,31 @@
     "id": "jBWMVGjm50l6LGwepDoty",
     "username": "frontendmaster"
   },
-  "pet": []
+  "pet": [
+    { "id": 1, "name": "snowy", "type": "dog", "createdAt": "1" },
+    {
+      "id": 2,
+      "name": "fluffy",
+      "type": "cat",
+      "createdAt": "2"
+    },
+    {
+      "id": 3,
+      "name": "buddy",
+      "type": "dog",
+      "createdAt": "3"
+    },
+    {
+      "id": 4,
+      "name": "whiskers",
+      "type": "cat",
+      "createdAt": "4"
+    },
+    {
+      "id": 5,
+      "name": "rocky",
+      "type": "dog",
+      "createdAt": "5"
+    }
+  ]
 }

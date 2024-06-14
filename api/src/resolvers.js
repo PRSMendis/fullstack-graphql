@@ -5,9 +5,10 @@
 
 module.exports = {
   Query: {
-    User: async (_, __, { models }) => {
+    User: async (_, {input}, { models }) => {
       // Fetch user from database
-      const user = await models.User.findOne();
+      const {id, username} = input
+      const user = await models.User.findOne({ id });
 
       // If no user found, throw an error
       if (!user) {
@@ -17,16 +18,23 @@ module.exports = {
       // Return the user
       return user;
     },
-    Pets: async (_, __, {models}) => {
-      // const pet = await models.Pet.findOne();
-      const pet = await models.Pet.findMany();
+    Pets: async (_, {input}, {models}) => {
+      const query = {};
+      if (input.name) query.name = input.name;
+      if (input.type) query.type = input.type;
+    
+      const pets = await models.Pet.findMany(query);
+      return pets;
+    },
+    Pet:  async (_, {name}, {models}) => {
+      const pet = await models.Pet.findOne((pet) => pet.name === name)
 
       if (!pet) {
         throw new Error('Pet not found');
       }
 
       return pet
-    }
+    } 
   },
   // Mutation: {
     
