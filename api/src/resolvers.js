@@ -40,6 +40,10 @@ module.exports = {
     newPet: async (_, {input}, {models}) => {
       const pet = await models.Pet.create(input)
       return pet
+    },
+    newUser: async (_, {input}, {models}) => {
+      const user = await models.User.create(input)
+      return user
     }
     
   },
