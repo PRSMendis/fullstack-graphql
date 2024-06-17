@@ -2,14 +2,25 @@
   "user": {
     "id": "46ycTobse249iZDspxvjV",
     "createdAt": 1718582292211,
-    "username": "test"
+    "username": "test",
+    "pets": [
+      {
+        "id": 1,
+        "name": "snowy",
+        "type": "dog",
+        "createdAt": "1"
+      }
+    ]
   },
   "pet": [
     {
       "id": 1,
       "name": "snowy",
       "type": "dog",
-      "createdAt": "1"
+      "createdAt": "1",
+      "user": {
+        "id": "46ycTobse249iZDspxvjV"
+      }
     },
     {
       "id": 2,
