@@ -34,6 +34,8 @@ const typeDefs = gql`
     type Mutation {
         newPet(input: PetInput): Pet!
         newUser(input: UserInput): User!
+        deletePet(name: String!) : Pet!
+        deleteUser(input: UserInput): User!
     }
 `;
 

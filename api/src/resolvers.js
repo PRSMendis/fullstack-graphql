@@ -44,6 +44,14 @@ module.exports = {
     newUser: async (_, {input}, {models}) => {
       const user = await models.User.create(input)
       return user
+    },
+    deleteUser: async (_, {input}, {models}) => {
+      const user = await models.User.deleteUser(input)
+      return user
+    },
+    deletePet: async (_, {name}, {models} ) => {
+      const pet = await models.Pet.deletePet(name)
+      return pet
     }
     
   },

@@ -13,6 +13,14 @@ const createUserModel = db => {
         .write()
   
       return newUser
+    },
+
+    deleteUser(id) {
+      const deletedUser = db.get('user')
+        .remove({ id })
+        .write()
+
+      return deletedUser
     }
   }
 }

@@ -22,8 +22,27 @@ const createPetModel = db => {
         .write()
 
       return newPet
+    },
+    deletePet(name) {
+      const pet = db.get('pet')
+      .find({ name })
+      .value()
+
+      if (!pet) {
+        throw new Error('no such name in pets DB')
+
+      }
+
+      db.get('pet')
+      .remove({ name })
+      .write()
+      
+      return pet
+      
+      
+    }
+
     }
   }
-}
 
 module.exports = createPetModel
